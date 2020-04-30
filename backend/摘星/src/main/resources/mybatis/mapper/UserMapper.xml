@@ -13,6 +13,12 @@
           column="id" fetchType="lazy">
     </collection>
   </resultMap>
+  <resultMap id="UserInfo" type="com.example.catchstars.model.UserInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     id, `name`, email, `password`
@@ -29,6 +35,12 @@
     delete from `user`
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <select id="selectByName" parameterType="java.lang.String" resultMap="UserInfo">
+    select
+    <include refid="Base_Column_List"/>
+    from `user`
+    where name = #{name,jdbcType=VARCHAR}
+  </select>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.catchstars.model.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into `user` (`name`, email, `password`

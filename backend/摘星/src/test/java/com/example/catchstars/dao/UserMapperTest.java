@@ -2,6 +2,7 @@ package com.example.catchstars.dao;
 
 import com.example.catchstars.model.Card;
 import com.example.catchstars.model.User;
+import com.example.catchstars.model.UserInfo;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.BeforeClass;
@@ -37,5 +38,11 @@ public class UserMapperTest {
         for(int i=0;i<cards.size();i++){
             System.out.println("卡片"+(i+1)+":"+cards.get(i).toString());
         }
+    }
+
+    @Test
+    public void testSelectByName() {
+        UserInfo userInfo = mapper.selectByName("asp");
+        System.out.println(userInfo.toString());
     }
 }
