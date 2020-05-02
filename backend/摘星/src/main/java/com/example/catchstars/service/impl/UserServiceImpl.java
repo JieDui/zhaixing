@@ -12,4 +12,5 @@ public class UserServiceImpl implements UserService {
     public User getUserInfo(String userName) {
         return null;
     }
+
 }

@@ -2,8 +2,15 @@ package com.example.catchstars.dao;
 
 import com.example.catchstars.model.User;
 import com.example.catchstars.model.UserInfo;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface UserMapper {
+public interface UserMapper extends JpaRepository<User,Integer>{
+
+
+    User findByName(String Name);
+
+/*
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
@@ -16,5 +23,6 @@ public interface UserMapper {
 
     int updateByPrimaryKeySelective(User record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(User record);*/
+
 }
