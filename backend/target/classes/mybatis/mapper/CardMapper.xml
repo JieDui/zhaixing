@@ -13,6 +13,12 @@
             fetchType="lazy">
     </collection>
   </resultMap>
+  <resultMap id="CardInfo" type="com.example.catchstars.resource.CardInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="outof_date" jdbcType="BOOLEAN" property="outofDate" />
+  </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     id, title, user_id, outof_date
@@ -93,5 +99,11 @@
     <include refid="Base_Column_List"/>
     from card
     where user_id=#{userId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUserIdPage" resultMap="CardInfo">
+    select
+    <include refid="Base_Column_List"/>
+    from card
+    where user_id=#{userId,jdbcType=INTEGER} and outof_date=#{outDate,jdbcType=BOOLEAN}
   </select>
 </mapper>

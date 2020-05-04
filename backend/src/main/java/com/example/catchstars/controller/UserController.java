@@ -29,8 +29,12 @@ public class UserController {
 
     @ApiOperation(value = "返回用户信息", httpMethod = "GET")
     @GetMapping(value = "/starts/user/info")
-    public UserInfo UserInfo() {
-        return userService.getUserInfo("asp");
+    public Object UserInfo() {
+        if (session.getAttribute(SESSION_KEY) == null) {
+            return JsonResult.forbidden("please login first", null);
+        }
+        String name = (String) session.getAttribute(SESSION_KEY);
+        return JsonResult.ok(userService.getUserInfo(name));
     }
 
     @ApiOperation(value = "登入", httpMethod = "POST")

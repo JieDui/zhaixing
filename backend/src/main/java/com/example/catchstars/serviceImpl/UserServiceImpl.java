@@ -1,4 +1,4 @@
-package com.example.catchstars.service.impl;
+package com.example.catchstars.serviceImpl;
 
 import com.example.catchstars.dao.UserMapper;
 import com.example.catchstars.model.User;
