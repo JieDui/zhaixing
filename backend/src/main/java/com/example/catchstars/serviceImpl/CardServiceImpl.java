@@ -58,7 +58,7 @@ public class CardServiceImpl {
         return new PageInfo<CardInfo>(list);
     }
 
-    private boolean hasPower(int userId, int cardId) {
+    public boolean hasPower(int userId, int cardId) {
         Card card = cardMapper.selectByPrimaryKey(cardId);
         if (userId != card.getUserId()) {
             return false;

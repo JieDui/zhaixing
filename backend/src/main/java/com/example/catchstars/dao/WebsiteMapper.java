@@ -1,7 +1,9 @@
 package com.example.catchstars.dao;
 
 import com.example.catchstars.model.Website;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface WebsiteMapper {
     int deleteByPrimaryKey(Integer id);
 

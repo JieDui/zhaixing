@@ -5,7 +5,9 @@ public class Cardandwebsite {
 
     private Integer cardId;
 
+
     private Integer website_id;
+
     private Website website;
 
     public Integer getId() {
@@ -22,6 +24,14 @@ public class Cardandwebsite {
 
     public void setCardId(Integer cardId) {
         this.cardId = cardId;
+    }
+
+    public Integer getWebsite_id() {
+        return website_id;
+    }
+
+    public void setWebsite_id(Integer website_id) {
+        this.website_id = website_id;
     }
 
     public Website getWebsite() {

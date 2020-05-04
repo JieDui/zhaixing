@@ -1,21 +1,9 @@
-package com.example.catchstars.model;
+package com.example.catchstars.resource;
 
-import com.example.catchstars.resource.WebSiteInfo;
-
-public class Website {
-    private Integer id;
-
+public class WebSiteInfo {
     private Integer title;
 
     private String url;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getTitle() {
         return title;
@@ -39,7 +27,6 @@ public class Website {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
         sb.append(", title=").append(title);
         sb.append(", url=").append(url);
         sb.append("]");
