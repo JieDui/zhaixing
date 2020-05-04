@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.catchstars.CatchstarsApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.478 s <<< FAILURE! - in com.example.catchstars.CatchstarsApplicationTests
+contextLoads  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: javax/persistence/EntityManagerFactory
+Caused by: java.lang.ClassNotFoundException: javax.persistence.EntityManagerFactory
+
